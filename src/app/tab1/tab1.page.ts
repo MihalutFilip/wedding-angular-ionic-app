@@ -11,26 +11,21 @@ export class Tab1Page {
 
   constructor() {
     this.columns = [
-      { name: 'Name' },
-      { name: 'Company' },
-      { name: 'Genre' }
+      { name: 'Nume' },
+      { name: 'Persoane' },
+      { name: 'Cazare' }
     ];
 
     this.rows = [
       {
-        "name": "Escape Room",
-        "company": "Columbia Pictures",
-        "genre": "Horror"
+        "nume": "Andrei Craiu",
+        "persoane": "2",
+        "cazare": "Nu"
     },
     {
-        "name": "Rust Creek",
-        "company": "IFC Films",
-        "genre": "Drama"
-    },
-    {
-        "name": "American Hangman",
-        "company": "Hangman Productions",
-        "genre": "Thriller"
+        "nume": "Baiat din Cluj",
+        "persoane": "2",
+        "cazare": "Da"
     }
     ]
   }
