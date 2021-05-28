@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let person of persons" (click)="clickPerson()">
+      <ion-label>{{person.nume}}</ion-label>
+      <ion-badge>{{person.persoane}} persoane</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addPerson()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
