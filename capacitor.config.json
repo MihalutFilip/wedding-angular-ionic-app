@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "wedding-angular-ionic-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
