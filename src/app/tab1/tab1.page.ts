@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,7 @@ export class Tab1Page {
   public columns: any;
   public rows: any;
 
-  constructor() {
+  constructor(private alertController: AlertController) {
     this.columns = [
       { name: 'Nume' },
       { name: 'Persoane' },
@@ -28,6 +29,25 @@ export class Tab1Page {
         "cazare": "Da"
     }
     ]
+  }
+
+  async clickPerson() {
+    const alert = await this.alertController.create({
+      message: 'Adaugi aceasta persoana la invitati?',
+      buttons: [{
+        text: 'Nu',
+        role: 'false'
+      },
+      {
+        text: 'Da',
+        role: 'true'
+      }]
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    
   }
 
 }

@@ -7,15 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ngx-datatable 
-      class="material"
-      [limit]="8" 
-      [rows]="rows" 
-      [rowHeight]="50" 
-      [columns]="columns"
-      [columnMode]="'force'" 
-      [sortType]="'multi'" 
-      [headerHeight]="50" 
-      [footerHeight]="50">
-    </ngx-datatable>
+  <ion-list>
+    <ion-item *ngFor="let row of rows" (click)="clickPerson()">
+      <ion-label>{{row.nume}}</ion-label>
+      <ion-badge>{{row.persoane}} persoane</ion-badge>
+    </ion-item>
+  </ion-list>
 </ion-content>
