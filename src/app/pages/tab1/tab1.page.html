@@ -5,12 +5,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item *ngFor="let person of persons" (click)="clickPerson()">
-      <ion-label>{{person.nume}}</ion-label>
-      <ion-badge>{{person.persoane}} persoane</ion-badge>
+  <ion-list *ngIf="persons && persons.length > 0">
+    <ion-item *ngFor="let person of persons" >
+      <ion-label>{{person.name}}</ion-label>
+      <!-- <ion-badge>{{person.persoane}} persoane</ion-badge> -->
+      <ion-icon color="blue" (click)="clickPerson()" name="arrow-forward-outline"></ion-icon>
     </ion-item>
+
+    <ion-item-sliding>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)"><ion-icon color="danger" name="trash-outline"></ion-icon></ion-item-option>
+      </ion-item-options>
+    <ion-item>
+      <ion-label>Item Options</ion-label>
+    </ion-item>
+
+   
+  </ion-item-sliding>
   </ion-list>
+
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addPerson()">

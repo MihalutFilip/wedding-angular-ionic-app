@@ -6,10 +6,7 @@
 
 <ion-content>
   <ion-item>
-    <ion-input placeholder="Nume"></ion-input>
+    <ion-input placeholder="Nume" (change)="setName($event.target.value)"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input placeholder="Numar persoane" type="number"></ion-input>
-  </ion-item>
-  <ion-button>Adauga</ion-button>
+  <ion-button (click)="closeModal()">Adauga</ion-button>
 </ion-content>

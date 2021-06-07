@@ -20,12 +20,10 @@ export class Tab1Page {
 
   async intializePersons() {
     this.persons = await this.storageService.get('persoane') || [];
-    console.log(this.persons);
   }
 
   async clickPerson() {
     let a = await this.storageService.get('persoane');
-    console.log(a);
     const alert = await this.alertController.create({
       subHeader: 'Adaugi aceasta persoana la invitati?',
       buttons: [{
@@ -48,6 +46,11 @@ export class Tab1Page {
     const modal = await this.modalController.create({
       component: AddPersonModalPage
     });
-    return await modal.present();
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    this.persons.push(data);
+    await this.storageService.set('persoane', this.persons);
+
   }
 }
